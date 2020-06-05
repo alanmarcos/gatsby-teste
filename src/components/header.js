@@ -8,6 +8,7 @@ let SpeechRecognition, recognition;
 if(isBrowser){
   SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
   recognition = new SpeechRecognition()
+  recognition.lang = 'pt-BR'
 }
 
 
