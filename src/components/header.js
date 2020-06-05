@@ -2,8 +2,14 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import Logo from "../images/logo-credpago.svg"
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-const recognition = new SpeechRecognition()
+const isBrowser = typeof window !== `undefined`
+let SpeechRecognition, recognition;
+
+if(isBrowser){
+  SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+  recognition = new SpeechRecognition()
+}
+
 
 const Header = (props) => {
   const { hasSpeechRecognition } = props;
