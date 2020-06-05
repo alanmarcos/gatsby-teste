@@ -33,14 +33,11 @@ const Header = (props) => {
         else interimTranscript += transcript;
       }
       updateLastSentence(finalTranscript);
-      alert(interimTranscript);
       setSpeaking(false);
       recognition.stop()
     }
 
     recognition.onerror = event => {
-
-      console.log(event);
       alert(event.error);
     }
     
