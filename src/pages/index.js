@@ -1,16 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
+// import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import SliderHome from '../components/slider/home'
+// import FotoBruno from '../images/banners/bruno.png'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <SliderHome />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>

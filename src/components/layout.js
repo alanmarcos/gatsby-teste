@@ -9,7 +9,7 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from "./header/index"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -34,13 +34,7 @@ const Layout = ({ children }) => {
     <>
       <Header 
         hasSpeechRecognition={speechRecognition} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 1800,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
