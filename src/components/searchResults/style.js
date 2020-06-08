@@ -8,9 +8,9 @@ export const SearchResultsWrapper = styled.section`
   position: absolute;
   left:0;
   top:0;
-  opacity: ${props => props.query ? 1 : 0};
+  opacity: ${props => props.isSpeaking ? 1 : 0};
   pointer-events: ${props => props.query ? 'auto' : 'none'};
-  transform: translateY(${(props => props.query ? '0' : '-80px')});
+  transform: translateY(${props => props.isSpeaking ? '0' : '-80px'});
   transition: all .2s;
   background:rgba(255,255,255,0.9);
 `

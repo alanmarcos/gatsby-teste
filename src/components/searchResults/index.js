@@ -3,11 +3,15 @@ import { SearchResultsWrapper } from './style'
 
 
 const SearchResults = props => {
-  const { query } = props;
+  const { isSpeaking, query } = props;
 
   return (
     <SearchResultsWrapper {...props}>
-      Resultados da busca por: {query}
+      {isSpeaking ? (
+        <div>Estou te ouvindo...</div>
+      ) : (
+        <div>Resultados da busca por: {query}</div>
+      )}
     </SearchResultsWrapper>
   )
 }

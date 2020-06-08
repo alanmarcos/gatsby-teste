@@ -57,7 +57,7 @@ const HeaderWrapper = (props) => {
   return (
     <Header>
 
-      <SearchResults query={lastSentence} />
+      <SearchResults isSpeaking={isSpeaking} query={lastSentence} />
 
       <LogoWrapper>
         <Link
