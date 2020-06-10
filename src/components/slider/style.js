@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import globals from '../globals'
 
 export const SliderWrapper = styled.div`
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.15);
+  margin-bottom:4em;
 
   img {
     margin:0;
@@ -29,6 +31,7 @@ export const SliderWrapper = styled.div`
   }
 
   .awssld__content {
+    background-color: transparent;
 
     & > div {
       width:100%;
@@ -68,14 +71,14 @@ export const SlideTextWrapper = styled.div`
   }
 
   .looping-texts {
-    margin-left:15px;
+    margin-left:.3em;
 
     span {
       /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff0000+0,87e0fd+100 */
       background: #ff0000; /* Old browsers */
       background: linear-gradient(135deg,  #23c1ff 0%,#7be8ff 100%);
       color:white;
-      padding:.2em .35em;
+      padding:.15em .25em;
       border-radius:8px;
       font-weight: normal;
     }

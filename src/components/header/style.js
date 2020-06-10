@@ -3,7 +3,6 @@ export const headerHeight = '116px'
 
 export const Header = styled.header`
   height: ${headerHeight};
-  border-bottom: 1px solid #d1d1d1;
   padding: .5em 1em;
   display: grid;
   grid-template-columns: 1fr max-content;
