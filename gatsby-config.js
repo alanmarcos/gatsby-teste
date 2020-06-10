@@ -34,6 +34,12 @@ module.exports = {
         // Add any options here
       },
     },
+    {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        //exclude: /some_special_folder/,
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

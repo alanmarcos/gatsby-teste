@@ -10,7 +10,11 @@ const globals = {
     lightblue: '#2ac4ef'
   },
   mediaqueries: {
-
+    huge: 'screen and (min-width:1441px)',
+    large: 'screen and (min-width: 1171px) and (max-width:1440px)',
+    medium: 'screen and (min-width: 769px) and (max-width:1170px)',
+    small: 'screen and (min-width: 451px) and (max-width:768px)',
+    extraSmall: 'screen and (max-width:450px)',
   },
   headings: {
 

@@ -1,5 +1,18 @@
 import styled from 'styled-components'
 import globals from '../globals'
+import AwesomeSlider from 'react-awesome-slider'
+
+export const HomeAwesomeSlider = styled(AwesomeSlider)`
+  height: calc(100vh - 116px - 35px);
+
+  @media ${globals.mediaqueries.small}{
+    height: 660px;
+  }
+
+  @media ${globals.mediaqueries.extraSmall}{
+    height: 420px;
+  }
+`
 
 export const SliderWrapper = styled.div`
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.15);
@@ -20,7 +33,22 @@ export const SliderWrapper = styled.div`
         background-color: ${globals.colors.lightblue};
       }
     }
-  }  
+  }
+
+  img.foto-bruno {
+
+    @media ${globals.mediaqueries.small}{
+      transform: translateX(-13%);
+      max-width:610px;
+      width:100%;
+    }
+
+    @media ${globals.mediaqueries.extraSmall}{
+      transform: translateX(-18%);
+      max-width:320px;
+      width:100%;
+    }
+  }
 
   img.bottom-right {
     position: absolute;
@@ -28,6 +56,7 @@ export const SliderWrapper = styled.div`
     bottom:0;
     pointer-events: none;
     z-index: 150;
+    max-height: 100%;
   }
 
   .awssld__content {
@@ -37,6 +66,20 @@ export const SliderWrapper = styled.div`
       width:100%;
       padding-left:130px;
       padding-left: 9vw;
+
+      @media ${globals.mediaqueries.small}{
+        padding-left:70px;
+        padding-right:70px;
+        padding-top:50px;
+        align-self:flex-start;
+      }
+
+      @media ${globals.mediaqueries.extraSmall}{
+        padding-left:70px;
+        padding-right:70px;
+        padding-top:50px;
+        align-self:flex-start;
+      }
     }
   }
 `
@@ -57,12 +100,25 @@ export const SlideTextWrapper = styled.div`
   position: relative;
   color: ${globals.colors.darkblue};
 
+  @media ${globals.mediaqueries.large}{
+    max-width:500px;
+  }
+
+  @media ${globals.mediaqueries.medium}{
+    max-width:420px;
+  }
+
+  @media ${globals.mediaqueries.small}{
+    max-width:100%;
+    text-align: center;
+  }
+
+  @media ${globals.mediaqueries.extraSmall}{
+    max-width:100%;
+    text-align: center;
+  }
+
   h1 {
-    font-size: 4vw;
-    margin-bottom:0;
-    padding-bottom:0;
-    font-family: ${globals.fonts.headings};
-    font-weight: 800;
 
     & ~ p {
       margin-top:1.5em;
