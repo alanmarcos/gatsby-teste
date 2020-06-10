@@ -8,7 +8,7 @@ const SearchResults = props => {
   return (
     <SearchResultsWrapper {...props}>
       {isSpeaking ? (
-        <div>Estou te ouvindo...</div>
+        <div>Estou te ouvindo... (mas não estou bem integrado)</div>
       ) : (
         <div>Resultados da busca por: {query}</div>
       )}

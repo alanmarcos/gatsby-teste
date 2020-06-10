@@ -1,15 +1,9 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
+import { Helmet }  from 'react-helmet'
 // import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header/index"
+import Header from "../header/index"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -32,6 +26,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet" />
+      </Helmet>
       <Header 
         hasSpeechRecognition={speechRecognition} />
       <div>
