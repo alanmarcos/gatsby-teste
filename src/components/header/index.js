@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import Logo from "../../images/logo-credpago.svg"
 import { Header, Menu, LogoWrapper } from './style'
 import SearchResults from '../searchResults/index'
+import { ReactComponent as IconeBusca } from '../../images/icons/search.svg'
 const isBrowser = typeof window !== `undefined`
 let SpeechRecognition, recognition;
 
@@ -76,7 +77,7 @@ const HeaderWrapper = (props) => {
           {Object.keys(menu).map( (item, index) => {
             let { link } = menu[item];
             return (
-              <li key={index}>
+              <li className="menu-item" key={index}>
                 <Link to={link}>
                   {item}
                 </Link>
@@ -99,13 +100,7 @@ const HeaderWrapper = (props) => {
           )}
           <li>
             <button onClick={() => console.log('buscar')}>
-              <svg fill="url(#gradientIcons)" viewBox="0 0 90.1 90.1">
-                <linearGradient id="gradientIcons" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0%" stopColor="#0dc2ee"/>
-                  <stop offset="100%" stopColor="#11639e"/>
-                </linearGradient>
-                <path d="M72.8 62C85 43.7 80.2 19 62 6.8S19-.6 6.8 17.6-.6 60.5 17.6 72.8c13.4 9 30.9 9 44.4 0l15 15c3 3 7.8 3 10.8 0s3-7.8 0-10.8l-15-15zm-33 8.4c-16.9 0-30.5-13.7-30.5-30.5C9.3 23 23 9.4 39.8 9.4c16.9 0 30.5 13.7 30.5 30.5S56.7 70.3 39.8 70.4z" />
-              </svg>
+              <IconeBusca />
             </button>
           </li>
         </ul>

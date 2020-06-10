@@ -6,7 +6,7 @@ export const HomeAwesomeSlider = styled(AwesomeSlider)`
   height: calc(100vh - 116px - 35px);
 
   @media ${globals.mediaqueries.small}{
-    height: 660px;
+    height: 600px;
   }
 
   @media ${globals.mediaqueries.extraSmall}{
@@ -77,7 +77,7 @@ export const SliderWrapper = styled.div`
       @media ${globals.mediaqueries.extraSmall}{
         padding-left:70px;
         padding-right:70px;
-        padding-top:50px;
+        padding-top:35px;
         align-self:flex-start;
       }
     }
@@ -105,7 +105,7 @@ export const SlideTextWrapper = styled.div`
   }
 
   @media ${globals.mediaqueries.medium}{
-    max-width:420px;
+    max-width:380px;
   }
 
   @media ${globals.mediaqueries.small}{

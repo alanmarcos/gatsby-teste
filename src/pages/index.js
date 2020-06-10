@@ -7,7 +7,7 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import SliderHome from '../components/slider/home'
 import { H2 } from '../components/headings/index'
-import comoFuncionaUrl/*, { ReactComponent as ComoFunciona }*/ from '../images/svg/picto-como-funciona.svg'
+import comoFuncionaUrl from '../images/svg/picto-como-funciona.svg'
 
 const IndexPage = () => (
   <Layout>

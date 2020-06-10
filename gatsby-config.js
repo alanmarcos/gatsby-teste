@@ -38,6 +38,12 @@ module.exports = {
       resolve: 'gatsby-plugin-svgr',
       options: {
         //exclude: /some_special_folder/,
+        prettier: false,         // use prettier to format JS code output (default)
+        svgo: false,             // use svgo to optimize SVGs (default)
+        svgoConfig: {
+          removeViewBox: true, // remove viewBox when possible (default)
+          cleanupIDs: false,    // remove unused IDs and minify remaining IDs (default)
+        },
       },
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

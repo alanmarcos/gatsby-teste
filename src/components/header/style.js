@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import globals from '../globals'
 export const headerHeight = '116px'
 
 export const Header = styled.header`
@@ -31,6 +32,17 @@ export const Menu = styled.nav`
       & + li {
         margin-left:30px;
       }
+    }
+  }
+
+  .menu-item {
+
+    @media ${globals.mediaqueries.small}{
+      display: none;
+    }
+
+    @media ${globals.mediaqueries.extraSmall}{
+      display: none;
     }
   }
 
