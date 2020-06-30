@@ -1,14 +1,20 @@
 import styled from 'styled-components'
 import globals from '../globals'
 export const headerHeight = '116px'
+const { mediaqueries, colors, paddingSides } = globals
 
 export const Header = styled.header`
+  width:100%;
   height: ${headerHeight};
-  padding: .5em 1em;
+  padding: .5em ${paddingSides};
   display: grid;
   grid-template-columns: 1fr max-content;
   align-items: center;
-  position: relative;
+  position: fixed;
+  z-index:2000;
+  transition: all .2s;
+  background: ${props => props.bgColor ? props.bgColor : 'none'};
+  box-shadow: ${props => props.bgColor ? '0 1px 5px 0 rgba(0,0,0,0.3)' : 'none'};
 
   *:focus {
     outline-color:#27c3ed;
@@ -31,18 +37,50 @@ export const Menu = styled.nav`
 
       & + li {
         margin-left:30px;
+
+        @media ${mediaqueries.small}{
+          margin-left:15px;
+        }
+
+        @media ${mediaqueries.extraSmall}{
+          margin-left:10px;
+        }
       }
     }
   }
 
   .menu-item {
 
-    @media ${globals.mediaqueries.small}{
+    a {
+      color: ${colors.darkblue};
+      text-decoration:none;
+      transition: all .2s;
+      font-weight:bold;
+
+      &:hover {
+        color: ${colors.lightblue};
+      }
+    }
+
+    @media ${mediaqueries.small}{
       display: none;
     }
 
-    @media ${globals.mediaqueries.extraSmall}{
+    @media ${mediaqueries.extraSmall}{
       display: none;
+    }
+  }
+
+  .mobile-menu-link {
+    display:none;
+
+    @media ${mediaqueries.small}, ${mediaqueries.extraSmall}{
+      display: list-item;
+    }
+
+    svg {
+      width:auto;
+      height:26px;
     }
   }
 
@@ -60,6 +98,10 @@ export const Menu = styled.nav`
   svg {
     width:auto;
     height:40px;
+
+    & > * { 
+      fill: url(#gradientIcons);
+    }
   }
 `
 

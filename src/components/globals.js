@@ -1,4 +1,7 @@
 const globals = {
+  containerMaxWidth: '1400px',
+  paddingSides: '1.3em',
+  lineHeight: 1.4,
   fonts: {
     sans: 'Roboto, sans-serif',
     serif: 'Georgia, serif',
@@ -7,9 +10,11 @@ const globals = {
   },
   colors: {
     darkblue: '#113c64',
-    lightblue: '#2ac4ef'
+    lightblue: '#2ac4ef',
+    lightGray: '#9f9f9f',
   },
   mediaqueries: {
+    darkmode: '(prefers-color-scheme: dark)',
     huge: 'screen and (min-width:1441px)',
     large: 'screen and (min-width: 1171px) and (max-width:1440px)',
     medium: 'screen and (min-width: 769px) and (max-width:1170px)',

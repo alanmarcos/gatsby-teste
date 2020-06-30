@@ -35,22 +35,33 @@ export const SliderWrapper = styled.div`
     }
   }
 
-  img.foto-bruno {
+  .foto-bruno {
 
-    @media ${globals.mediaqueries.small}{
-      transform: translateX(-13%);
-      max-width:610px;
-      width:100%;
+    @media ${globals.mediaqueries.small}, ${globals.mediaqueries.extraSmall}{
+      width:100% !important;
     }
 
-    @media ${globals.mediaqueries.extraSmall}{
-      transform: translateX(-18%);
-      max-width:320px;
-      width:100%;
+    img {
+      @media ${globals.mediaqueries.small}{
+        transform: translateX(-3%);
+        object-fit: contain !important;
+        object-position: center bottom !important;
+        bottom:0;
+        max-width:610px;
+        width:100%;
+      }
+
+      @media ${globals.mediaqueries.extraSmall}{
+        transform: translateX(-2%);
+        object-fit: contain !important;
+        object-position: center bottom !important;
+        max-width:320px;
+        width:100%;
+      }
     }
   }
 
-  img.bottom-right {
+  .bottom-right {
     position: absolute;
     right:0;
     bottom:0;

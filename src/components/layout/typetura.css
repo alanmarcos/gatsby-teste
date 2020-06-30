@@ -1,0 +1,244 @@
+body h6 {
+  --tt-key: h6;
+  font-size: 1.5rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.7rem;
+  font-family: "Uni Neue";
+}
+
+@keyframes h6 {
+  0%, 23.1875% {
+    font-size: 1.2rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  48% {
+    font-size: 1.4rem;
+  }
+  64% {
+    font-size: 1.5rem;
+  }
+  100% {
+    line-height: 1.7rem;
+  }
+}
+body h5 {
+  --tt-key: h5;
+  font-size: 2.1rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: "Uni Neue";
+}
+
+@keyframes h5 {
+  0%, 23.1875% {
+    font-size: 1.4rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  48% {
+    font-size: 1.5rem;
+  }
+  64% {
+    font-size: 1.8rem;
+  }
+  100% {
+    font-size: 2.1rem;
+  }
+}
+body h4 {
+  --tt-key: h4;
+  font-size: 2.4rem;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-family: "Uni Neue";
+}
+
+@keyframes h4 {
+  0%, 23.1875% {
+    font-size: 1.6rem;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  48% {
+    font-size: 1.7rem;
+  }
+  64% {
+    font-size: 2rem;
+  }
+  100% {
+    font-size: 2.4rem;
+  }
+}
+body h3 {
+  --tt-key: h3;
+  font-size: 2.8rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: "Uni Neue";
+}
+
+@keyframes h3 {
+  0%, 23.1875% {
+    font-size: 1.8rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  48% {
+    font-size: 1.9rem;
+  }
+  64% {
+    font-size: 2.2rem;
+  }
+  100% {
+    font-size: 2.8rem;
+  }
+}
+body h2 {
+  --tt-key: h2;
+  font-size: 3rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: "Uni Neue";
+}
+
+@keyframes h2 {
+  0%, 23.1875% {
+    font-size: 1.9rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  48% {
+    font-size: 2.2rem;
+  }
+  64% {
+    font-size: 2.4rem;
+  }
+  100% {
+    font-size: 3.5rem;
+  }
+}
+body h1 {
+  --tt-key: h1;
+  font-size: 3.4rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: "Uni Neue";
+}
+
+@keyframes h1 {
+  0%, 23.1875% {
+    font-size: 2.2rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  48% {
+    font-size: 2.6rem;
+  }
+  64% {
+    font-size: 3rem;
+  }
+  100% {
+    font-size: 4.2rem;
+  }
+}
+body p {
+  --tt-key: p;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-family: Roboto;
+}
+
+@keyframes p {
+  0%, 23.1875% {
+    font-size: 1rem;
+  }
+  37.5% {
+    line-height: 1.6;
+  }
+  48% {
+    font-size: 1.1rem;
+  }
+  64% {
+    font-size: 1.2rem;
+  }
+  100% {
+    font-size: 1.45rem;
+  }
+}
+body blockquote {
+  --tt-key: blockquote;
+  font-size: 1.3rem;
+  margin-left: 1.4em;
+  line-height: 1.6;
+  font-family: Georgia, sans-serif;
+  font-style: italic;
+}
+
+@keyframes blockquote {
+  0%, 23.1875% {
+    font-size: 1rem;
+    margin-left: 1.4em;
+  }
+  37.5% {
+    line-height: 1.6;
+  }
+  48% {
+    font-size: 1.1rem;
+  }
+  64% {
+    font-size: 1.2rem;
+  }
+  100% {
+    font-size: 1.3rem;
+  }
+}
+body ul {
+  --tt-key: ul;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-family: Roboto;
+}
+
+@keyframes ul {
+  0%, 23.1875% {
+    font-size: 1rem;
+  }
+  37.5% {
+    line-height: 1.6;
+  }
+  48% {
+    font-size: 1.1rem;
+  }
+  64% {
+    font-size: 1.2rem;
+  }
+  100% {
+    font-size: 1.3rem;
+  }
+}
+body ol {
+  --tt-key: ol;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-family: Roboto;
+}
+
+@keyframes ol {
+  0%, 23.1875% {
+    font-size: 1rem;
+  }
+  37.5% {
+    line-height: 1.6;
+  }
+  48% {
+    font-size: 1.1rem;
+  }
+  64% {
+    font-size: 1.2rem;
+  }
+  100% {
+    font-size: 1.3rem;
+  }
+}

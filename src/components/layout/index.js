@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
+import { withPrefix } from 'gatsby'
 import PropTypes from "prop-types"
 import { Helmet }  from 'react-helmet'
 import { LayoutWrapper } from './style'
-// import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "../header/index"
+import "./typetura.css"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
   const [ speechRecognition, setSpeechRecognition ] = useState(false);
 
   useEffect( () => {
+
     setSpeechRecognition(Boolean(window.SpeechRecognition || window.webkitSpeechRecognition));
   }, []);
 
@@ -25,21 +26,31 @@ const Layout = ({ children }) => {
   //   }
   // `)
 
+  let filter = (true ? 'blur(0)' : 'blur(15px)') 
+
   return (
     <LayoutWrapper>
-      <Helmet>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet" />
-      </Helmet>
-      <Header 
-        hasSpeechRecognition={speechRecognition} />
-      <div>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+        <Helmet>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
+          <script src={'/js/typetura.min.js'}></script>
+        </Helmet>
+        <Header 
+          hasSpeechRecognition={speechRecognition} />
+        <div 
+          style={{ 
+            transition: 'all .2s ease', 
+            willChange: 'filter', 
+            filter: filter
+            }}>
+          <main>
+            {children}
+          </main>
+          <footer>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </footer>
+        </div>
     </LayoutWrapper>
   )
 }

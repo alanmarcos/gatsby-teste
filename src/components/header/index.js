@@ -5,14 +5,8 @@ import Logo from "../../images/logo-credpago.svg"
 import { Header, Menu, LogoWrapper } from './style'
 import SearchResults from '../searchResults/index'
 import { ReactComponent as IconeBusca } from '../../images/icons/search.svg'
-const isBrowser = typeof window !== `undefined`
-let SpeechRecognition, recognition;
-
-if(isBrowser){
-  SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-  recognition = new SpeechRecognition()
-  recognition.lang = 'pt-BR'
-}
+import { ReactComponent as IconeMenu } from '../../images/icons/menu.svg'
+import useEventListener from '@use-it/event-listener';
 
 const menu = {
   'Home': { link: '/' },
@@ -23,90 +17,91 @@ const menu = {
 
 const HeaderWrapper = (props) => {
   const { hasSpeechRecognition } = props;
-  const [ lastSentence, updateLastSentence ] = useState('')
-  const [ isSpeaking, setSpeaking ] = useState(false);
+  const [ isSpeaking, setSpeaking ] = useState(false)
+  const [ isSearchActive, updateSearchActive ] = useState(false)
+  const [ bgHeader, updateBgHeader ] = useState(false)
 
+  useEventListener('scroll', (e) => {
+    let currentPosition = window.pageYOffset;
+    let headerBgColor = 'rgba(255,255,255,0.96)'
 
-  const gravarAudio = (e) => {
-
-    setSpeaking(true);
-
-    recognition.start()
-
-    let finalTranscript = ''
-    recognition.onresult = event => {
-      let interimTranscript = ''
-
-      for (let i = event.resultIndex; i < event.results.length; i++) {
-        const transcript = event.results[i][0].transcript;
-        if (event.results[i].isFinal) finalTranscript += transcript + ' ';
-        else interimTranscript += transcript;
-      }
-      updateLastSentence(finalTranscript || interimTranscript);
-      console.log(finalTranscript || interimTranscript)
-      setSpeaking(false);
-      recognition.stop()
+    if( currentPosition > 30 ){
+      if(bgHeader !== headerBgColor){
+        updateBgHeader(headerBgColor)
+      }    
+    } else {
+      updateBgHeader(false)
     }
+  });
 
-    recognition.onerror = event => {
-      alert(event.error);
-    }
-    
-    return false;
+  const handleSearch = (isActive, isSpeaking) => {
+    updateSearchActive(isActive)
+    setSpeaking(isSpeaking)
   }
 
   return (
-    <Header>
+    <>
+      <Header bgColor={bgHeader}>
 
-      <SearchResults isSpeaking={isSpeaking} query={lastSentence} />
+        <LogoWrapper>
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            <img width="176" src={Logo} alt="CredPago" />
+          </Link>
+        </LogoWrapper>
 
-      <LogoWrapper>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          <img width="176" src={Logo} alt="CredPago" />
-        </Link>
-      </LogoWrapper>
-
-      <Menu>
-        <ul>
-          {Object.keys(menu).map( (item, index) => {
-            let { link } = menu[item];
-            return (
-              <li className="menu-item" key={index}>
-                <Link to={link}>
-                  {item}
-                </Link>
+        <Menu>
+          <ul>
+            {Object.keys(menu).map( (item, index) => {
+              let { link } = menu[item];
+              return (
+                <li className="menu-item" key={index}>
+                  <Link to={link}>
+                    {item}
+                  </Link>
+                </li>
+              )
+            })}
+            {hasSpeechRecognition && (
+              <li>
+                <button onClick={() => handleSearch(true, true)} alt={isSpeaking ? 'Ouvindo...' : 'Buscar por voz'}>
+                  <svg fill="url(#gradientIcons)" viewBox="0 0 36.2 52.2">
+                    <linearGradient id="gradientIcons" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stopColor="#0dc2ee"/>
+                      <stop offset="100%" stopColor="#11639e"/>
+                    </linearGradient>
+                    <path d="M18.2 34.2c5.5 0 10-4.5 10-10v-14c0-5.5-4.5-10-10-10s-10 4.5-10 10v14c0 5.5 4.5 10 10 10zm-6-24c0-3.3 2.7-6 6-6s6 2.7 6 6v14c0 3.3-2.7 6-6 6s-6-2.7-6-6v-14z" />
+                    <path d="M36.2 24.2c0-1.1-.9-2-2-2s-2 .9-2 2c0 7.7-6.3 14-14 14s-14-6.3-14-14c0-1.1-.9-2-2-2s-2 .9-2 2c0 9.2 7 16.9 16 17.9v6.1h-6c-1.1 0-2 .9-2 2s.9 2 2 2h16c1.1 0 2-.9 2-2s-.9-2-2-2h-6V42c9-1 16-8.6 16-17.8z" />
+                  </svg>
+                </button>
               </li>
-            )
-          })}
-          {hasSpeechRecognition && (
-            <li>
-              <button onClick={gravarAudio} alt={isSpeaking ? 'Ouvindo...' : 'Buscar por voz'}>
-                <svg fill="url(#gradientIcons)" viewBox="0 0 36.2 52.2">
-                  <linearGradient id="gradientIcons" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0%" stopColor="#0dc2ee"/>
-                    <stop offset="100%" stopColor="#11639e"/>
-                  </linearGradient>
-                  <path d="M18.2 34.2c5.5 0 10-4.5 10-10v-14c0-5.5-4.5-10-10-10s-10 4.5-10 10v14c0 5.5 4.5 10 10 10zm-6-24c0-3.3 2.7-6 6-6s6 2.7 6 6v14c0 3.3-2.7 6-6 6s-6-2.7-6-6v-14z" />
-                  <path d="M36.2 24.2c0-1.1-.9-2-2-2s-2 .9-2 2c0 7.7-6.3 14-14 14s-14-6.3-14-14c0-1.1-.9-2-2-2s-2 .9-2 2c0 9.2 7 16.9 16 17.9v6.1h-6c-1.1 0-2 .9-2 2s.9 2 2 2h16c1.1 0 2-.9 2-2s-.9-2-2-2h-6V42c9-1 16-8.6 16-17.8z" />
-                </svg>
+            )}
+            <li className="mobile-menu-link">
+              <button onClick={() => console.log('abrir menu mobile')}>
+                <IconeMenu />
               </button>
             </li>
-          )}
-          <li>
-            <button onClick={() => console.log('buscar')}>
-              <IconeBusca />
-            </button>
-          </li>
-        </ul>
-      </Menu>
-      
-    </Header>
+            <li>
+              <button onClick={() => handleSearch(true, false)}>
+                <IconeBusca />
+              </button>
+            </li>
+          </ul>
+        </Menu>
+        
+      </Header>
+      <SearchResults 
+        isActive={isSearchActive}
+        isSpeaking={isSpeaking}
+        onStopSpeaking={() => setSpeaking(false)}
+        onClickOutside={() => updateSearchActive(false)}
+        />
+    </>
   )
 }
 
