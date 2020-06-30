@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import globals from '../globals'
 import Mapa from '../../images/map-background.jpg'
+import ParceiroBg from '../../images/parceiro-background.jpg'
 const { mediaqueries } = globals
 
 export const ComoFuncionaWrapper = styled.div`
@@ -122,3 +123,44 @@ export const MapaWrapper = styled.div`
   }
 `
 
+export const BlocoParceiroWrapper = styled.div`
+  background: url(${ParceiroBg}) no-repeat right top #1dc1f1;
+  height:210px;
+  display:flex;
+`
+
+export const BlocoParceiro = styled.div`
+  align-self:center;
+  margin:0 auto;
+  max-width: ${globals.containerMaxWidth};
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-left: ${globals.paddingSides};
+  padding-right: ${globals.paddingSides};
+
+  @media ${mediaqueries.extraSmall}, ${mediaqueries.small}{
+    grid-template-columns: 1fr;
+  }
+
+  & > div {
+    align-self:center;
+  }
+
+  .texts-wrapper {
+    color:#18325a;
+
+    p {
+      max-width:800px;
+    }
+  }
+
+  h4 {
+    color:white;
+    margin:0;
+    padding:0;
+  }
+`
+
+export const ParceirosWrapper = styled.div`
+  padding-top:40px;
+`

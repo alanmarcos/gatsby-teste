@@ -6,7 +6,7 @@ export const SectionHeader = props => {
   const { title, desc, icon } = props
 
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       {icon && (
         <img loading="lazy" width="69" src={icon} alt={title} />
       )}

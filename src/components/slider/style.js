@@ -3,7 +3,7 @@ import globals from '../globals'
 import AwesomeSlider from 'react-awesome-slider'
 
 export const HomeAwesomeSlider = styled(AwesomeSlider)`
-  height: calc(100vh - 116px - 35px);
+  height: calc(100vh - 56px);
 
   @media ${globals.mediaqueries.small}{
     height: 600px;

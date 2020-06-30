@@ -33,8 +33,6 @@ const Slider = props => {
                 style={{position: "absolute"}} 
                 alt="Bruno Gagliasso" />  
               
-              
-              {/* <img class="bottom-right foto-bruno" src={FotoBruno} alt="Bruno" /> */}
           </Slide>
 
           <div>Slide 2</div>
