@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { withPrefix } from 'gatsby'
 import PropTypes from "prop-types"
 import { Helmet }  from 'react-helmet'
 import { LayoutWrapper } from './style'
 import Header from "../header/index"
+import Footer from '../footer/index'
 import "./typetura.css"
 import "./layout.css"
 
@@ -45,11 +45,7 @@ const Layout = ({ children }) => {
           <main>
             {children}
           </main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <Footer />
         </div>
     </LayoutWrapper>
   )

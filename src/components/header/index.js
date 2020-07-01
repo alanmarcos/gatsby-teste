@@ -39,6 +39,12 @@ const HeaderWrapper = (props) => {
     setSpeaking(isSpeaking)
   }
 
+  const ouvir = (e) => {
+    e.preventDefault();
+    handleSearch(true, true)
+    return false;
+  }
+
   return (
     <>
       <Header bgColor={bgHeader}>
@@ -69,7 +75,7 @@ const HeaderWrapper = (props) => {
             })}
             {hasSpeechRecognition && (
               <li>
-                <button onClick={() => handleSearch(true, true)} alt={isSpeaking ? 'Ouvindo...' : 'Buscar por voz'}>
+                <button onClick={ouvir} alt={isSpeaking ? 'Ouvindo...' : 'Buscar por voz'}>
                   <svg fill="url(#gradientIcons)" viewBox="0 0 36.2 52.2">
                     <linearGradient id="gradientIcons" x1="0" x2="0" y1="0" y2="1">
                       <stop offset="0%" stopColor="#0dc2ee"/>

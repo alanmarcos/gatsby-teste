@@ -31,8 +31,7 @@ const Slider = props => {
                 fixed={data.FotoBruno.childImageSharp.fixed}
                 className="foto-bruno bottom-right"
                 style={{position: "absolute"}} 
-                alt="Bruno Gagliasso" />  
-              
+                alt="Bruno Gagliasso" />
           </Slide>
 
           <div>Slide 2</div>

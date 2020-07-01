@@ -164,3 +164,49 @@ export const BlocoParceiro = styled.div`
 export const ParceirosWrapper = styled.div`
   padding-top:40px;
 `
+
+export const ProdutosWrapper = styled.div`
+  padding-top:40px;
+  padding-bottom:40px;
+
+  h2 {
+    padding-top:.4em;
+    padding-bottom:.4em;
+  }
+`
+
+
+export const GoWrapper = styled.div`
+  margin:0 auto;
+  max-width:330px;
+  position: relative;
+
+  .line {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index:-1;
+  }
+
+  .go {
+    display:block;
+    margin:0 auto;
+  }
+`
+
+export const Produtos = styled.div`
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: ${globals.containerMaxWidth};
+  margin:0 auto;
+`
+
+export const Produto = styled.div`
+  text-align: center;
+
+  img {
+    margin:0 auto;
+    display:block;
+  }
+`
