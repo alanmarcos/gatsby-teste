@@ -31,9 +31,9 @@ const ComoFunciona = props => {
   return (
     <ComoFuncionaWrapper>
       <SectionHeader 
-        title="Como funciona?" 
+        title="Como Funciona?" 
         desc="O Processo é simples e totalmente digital. Mais facilidade para inquilinos, sem custo para a imobiliária."
-        descMaxWidth={600}
+        descMaxWidth={660}
         icon={PictoComoFunciona}
         />
       <EtapasWrapper>

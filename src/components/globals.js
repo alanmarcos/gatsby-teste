@@ -9,9 +9,10 @@ const globals = {
     headings: '"Uni Neue", Roboto, sans-serif',
   },
   colors: {
-    darkblue: '#113c64',
-    lightblue: '#2ac4ef',
+    darkBlue: '#113c64',
+    lightBlue: '#2ac4ef',
     lightGray: '#9f9f9f',
+    yellow: '#ffcc0e'    
   },
   mediaqueries: {
     darkmode: '(prefers-color-scheme: dark)',
@@ -21,8 +22,10 @@ const globals = {
     small: 'screen and (min-width: 451px) and (max-width:768px)',
     extraSmall: 'screen and (max-width:450px)',
   },
-  headings: {
-
+  inputSizes: {
+    small: '40px',
+    medium: '60px',
+    large: '70px'
   }
 }
 

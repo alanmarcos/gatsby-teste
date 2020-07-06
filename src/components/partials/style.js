@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import globals from '../globals'
 import Mapa from '../../images/map-background.jpg'
 import ParceiroBg from '../../images/parceiro-background.jpg'
-const { mediaqueries } = globals
+import Lines from '../../images/svg/lines.svg'
+const { mediaqueries, paddingSides, containerMaxWidth } = globals
 
 export const ComoFuncionaWrapper = styled.div`
   display:block;
@@ -83,9 +84,12 @@ export const MapaWrapper = styled.div`
     position: absolute;
     left:0;
     top:0;
-    z-index:-1;
+    z-index:0;
     opacity:0.6;
     animation: scroll 120s linear infinite;
+    filter: grayscale(1);
+    pointer-events:none;
+    will-change: background-position;
   }
 
   a {
@@ -96,11 +100,8 @@ export const MapaWrapper = styled.div`
     text-decoration:none;
     padding: 1.1em 2em;
     border-radius:6px;
-    opacity:0.8;
+    opacity:0.9;
 
-    &:hover {
-      opacity:1;
-    }
 
     &:active {
       background:#24b3da;
@@ -132,14 +133,16 @@ export const BlocoParceiroWrapper = styled.div`
 export const BlocoParceiro = styled.div`
   align-self:center;
   margin:0 auto;
-  max-width: ${globals.containerMaxWidth};
+  max-width: ${containerMaxWidth};
   display:grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  padding-left: ${globals.paddingSides};
-  padding-right: ${globals.paddingSides};
+  grid-gap:30px;
+  padding-left: ${paddingSides};
+  padding-right: ${paddingSides};
 
   @media ${mediaqueries.extraSmall}, ${mediaqueries.small}{
     grid-template-columns: 1fr;
+    grid-gap:10px;
   }
 
   & > div {
@@ -151,23 +154,27 @@ export const BlocoParceiro = styled.div`
 
     p {
       max-width:800px;
+      padding-bottom:0;
+      margin-bottom:0;
     }
   }
 
   h4 {
     color:white;
     margin:0;
-    padding:0;
+    padding-top:0;
   }
 `
 
 export const ParceirosWrapper = styled.div`
   padding-top:40px;
+  background-color:#f7f8f8;
+  box-shadow: inset 0 10px 10px 2px rgba(100,100,100,0.2);
 `
 
 export const ProdutosWrapper = styled.div`
-  padding-top:40px;
-  padding-bottom:40px;
+  padding: 40px ${paddingSides};
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.15);
 
   h2 {
     padding-top:.4em;
@@ -197,16 +204,113 @@ export const GoWrapper = styled.div`
 
 export const Produtos = styled.div`
   display:grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   max-width: ${globals.containerMaxWidth};
-  margin:0 auto;
+  margin:55px auto;
+  grid-gap:30px;
+
+  @media ${globals.mediaqueries.small}, ${globals.mediaqueries.extraSmall} {
+    grid-gap:15px;
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
 `
 
 export const Produto = styled.div`
   text-align: center;
+  align-self:center;
 
   img {
     margin:0 auto;
     display:block;
+    max-height: 100px;
+    max-width:170px;
+    transition: all .2s;
+    filter: grayscale(1);
+    opacity:0.5;
+
+    &:hover {
+      filter: grayscale(0);
+      opacity:1;
+    }
   }
+`
+
+export const DepoimentosContainer = styled.div`
+  width:100%;
+  height:auto;
+  padding-bottom:20px;
+  overflow:hidden;
+`
+
+export const DepoimentosWrapper = styled.div`
+  display:grid;
+  grid-template-columns: 4fr 8fr;
+  margin:0 auto;
+  padding:0 ${paddingSides};
+  max-width: ${containerMaxWidth};
+
+  @media ${mediaqueries.extraSmall}, ${mediaqueries.small}{
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    align-self:center;
+    text-align: center;
+
+    img {
+      margin:0;
+    }
+
+    .avatar-wrapper {
+      position:relative;
+      height: auto;
+      display:block;
+
+      .bg {
+        max-width:308px;
+        margin:0 auto;
+      }
+
+      .picture {
+        border-radius:80px;
+        position:absolute;
+        left:50%;
+        top:0;
+        margin-top:35px;
+        transform: translateX(-50%);
+        display:block;
+        box-shadow: 0 0 0 2px white;
+      }
+    }    
+
+    h5 {
+      font-weight:800;
+    }
+
+    h5, h6 {  
+      margin:0 !important;
+      padding:0 !important;
+      color: ${globals.colors.darkBlue};
+    }
+  }
+
+  .content {
+
+    @media ${mediaqueries.small}, ${mediaqueries.extraSmall}{
+      padding-top:20px;
+    }
+  }
+`
+
+export const LinesDivisor = styled.div`
+  background:url(${Lines}) no-repeat center top;
+  width:100%;
+  height:0;
+  padding-bottom:9%;
+`
+
+export const FAQWrapper = styled.div`
+  margin:0 auto;
+  padding:0 ${paddingSides};
+  max-width: 1030px;
 `

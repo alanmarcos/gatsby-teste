@@ -9,6 +9,7 @@ import QueroSerParceiro from '../components/partials/queroSerParceiro'
 import ProdutosCredpago from '../components/partials/produtosCredpago'
 import Depoimentos from '../components/partials/depoimentos'
 import PerguntasFrequentes from '../components/partials/faq'
+import { LinesDivisor } from '../components/partials/style'
 
 const IndexPage = () => (
   <Layout>
@@ -20,6 +21,7 @@ const IndexPage = () => (
     <QueroSerParceiro />
     <ProdutosCredpago />
     <Depoimentos />
+    <LinesDivisor />
     <PerguntasFrequentes />
   </Layout>
 )

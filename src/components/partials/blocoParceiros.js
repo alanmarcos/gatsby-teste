@@ -10,7 +10,7 @@ const BlocoParceiros = props => {
       <SectionHeader 
         title="Parceiros" 
         desc="São mais de 10.000 imobiliárias parceiras que operam com CredPago por todo o Brasil."
-        descMaxWidth={940}
+        descMaxWidth={960}
         icon={PictoParceiros}
         />
       <MapaWrapper>

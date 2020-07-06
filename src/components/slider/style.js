@@ -1,16 +1,18 @@
 import styled from 'styled-components'
 import globals from '../globals'
 import AwesomeSlider from 'react-awesome-slider'
+const { mediaqueries } = globals
+const { extraSmall, small, medium, large } = mediaqueries
 
 export const HomeAwesomeSlider = styled(AwesomeSlider)`
   height: calc(100vh - 56px);
 
-  @media ${globals.mediaqueries.small}{
+  @media ${small}{
     height: 600px;
   }
 
-  @media ${globals.mediaqueries.extraSmall}{
-    height: 420px;
+  @media ${extraSmall}{
+    height: 500px;
   }
 `
 
@@ -30,19 +32,19 @@ export const SliderWrapper = styled.div`
       background-color:#d7d7d7;
 
       &.awssld__bullets--active {
-        background-color: ${globals.colors.lightblue};
+        background-color: ${globals.colors.lightBlue};
       }
     }
   }
 
   .foto-bruno {
 
-    @media ${globals.mediaqueries.small}, ${globals.mediaqueries.extraSmall}{
+    @media ${small}, ${extraSmall}{
       width:100% !important;
     }
 
     img {
-      @media ${globals.mediaqueries.small}{
+      @media ${small}{
         transform: translateX(-3%);
         object-fit: contain !important;
         object-position: center bottom !important;
@@ -51,7 +53,7 @@ export const SliderWrapper = styled.div`
         width:100%;
       }
 
-      @media ${globals.mediaqueries.extraSmall}{
+      @media ${extraSmall}{
         transform: translateX(-2%);
         object-fit: contain !important;
         object-position: center bottom !important;
@@ -78,17 +80,17 @@ export const SliderWrapper = styled.div`
       padding-left:130px;
       padding-left: 9vw;
 
-      @media ${globals.mediaqueries.small}{
-        padding-left:70px;
-        padding-right:70px;
-        padding-top:50px;
+      @media ${small}{
+        padding-left:40px;
+        padding-right:40px;
+        padding-top:130px;
         align-self:flex-start;
       }
 
-      @media ${globals.mediaqueries.extraSmall}{
-        padding-left:70px;
-        padding-right:70px;
-        padding-top:35px;
+      @media ${extraSmall}{
+        padding-left:20px;
+        padding-right:20px;
+        padding-top:135px;
         align-self:flex-start;
       }
     }
@@ -109,27 +111,29 @@ export const SlideTextWrapper = styled.div`
   max-width: 700px;
   z-index: 200;
   position: relative;
-  color: ${globals.colors.darkblue};
+  color: ${globals.colors.darkBlue};
 
-  @media ${globals.mediaqueries.large}{
+  @media ${large}{
     max-width:500px;
   }
 
-  @media ${globals.mediaqueries.medium}{
+  @media ${medium}{
     max-width:380px;
   }
 
-  @media ${globals.mediaqueries.small}{
+  @media ${small}{
     max-width:100%;
     text-align: center;
   }
 
-  @media ${globals.mediaqueries.extraSmall}{
+  @media ${extraSmall}{
     max-width:100%;
     text-align: center;
   }
 
   h1 {
+    margin:0 !important;
+    padding:0 !important;
 
     & ~ p {
       margin-top:1.5em;
@@ -153,5 +157,48 @@ export const SlideTextWrapper = styled.div`
 
   p {
     font-size:1.4em;
+  }
+`
+
+export const DepoimentosSlider = styled(AwesomeSlider)`
+  --content-background-color: transparent;
+  --slider-height-percentage: 56.25%; /* 16:9 */
+  
+  .awssld__content {
+
+    & > div {
+      width:100%;
+    }
+  }
+`
+
+export const DepoimentoSlide = styled.div`
+  width:100%;
+`
+
+export const DepoimentoWrapper = styled.div`
+  position: relative;
+
+  &:before {
+    content:"";
+    width:103%;
+    height:104%;
+    position: absolute;
+    left:-1.5%;
+    top:-2%;
+    background:#0dc2ee;
+    border-radius:5px;
+  }
+
+  &:after {
+    content:"";
+    width:103%;
+    height:104%;
+    position:absolute;
+    left: 0.1%;
+    top: 0;
+    background: ${globals.colors.yellow};
+    border-radius: 5px;
+    z-index:-2;
   }
 `

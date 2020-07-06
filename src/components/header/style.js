@@ -52,13 +52,13 @@ export const Menu = styled.nav`
   .menu-item {
 
     a {
-      color: ${colors.darkblue};
+      color: ${colors.darkBlue};
       text-decoration:none;
       transition: all .2s;
       font-weight:bold;
 
       &:hover {
-        color: ${colors.lightblue};
+        color: ${colors.lightBlue};
       }
     }
 
@@ -106,8 +106,8 @@ export const Menu = styled.nav`
 `
 
 export const LogoWrapper = styled.h1`
-  margin:0;
-  padding:0;
+  margin:0 !important;
+  padding:0 !important;
 
   img {
     margin:0;

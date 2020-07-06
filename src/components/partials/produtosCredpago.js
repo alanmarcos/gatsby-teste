@@ -5,6 +5,11 @@ import LinhaGo from '../../images/svg/linha-go.svg'
 import CredpagoGo from '../../images/go.svg'
 import { ProdutosWrapper, GoWrapper, Produtos, Produto } from './style'
 
+import LogoSimulador from '../../images/logo-simulador-de-locacao.svg'
+import LogoPontaPonta from '../../images/logo-ponta-ponta.svg'
+import LogoCredSign from '../../images/logo-credsign.svg'
+import LogoAnaliseInstantanea from '../../images/logo-analise-instantanea.svg'
+
 const ProdutosCredpago = props => {
 
   return (
@@ -19,16 +24,16 @@ const ProdutosCredpago = props => {
       </Wrapper>
       <Produtos>
         <Produto>
-          <img src="//placehold.it/300x120" alt="Simulador de Locação" />
+          <img src={LogoSimulador} alt="Simulador de Locação" />
         </Produto>
         <Produto>
-          <img src="//placehold.it/300x120" alt="Simulador de Locação" />
+          <img src={LogoPontaPonta} alt="Simulador de Locação" />
         </Produto>
         <Produto>
-          <img src="//placehold.it/300x120" alt="Simulador de Locação" />
+          <img src={LogoCredSign} alt="Simulador de Locação" />
         </Produto>
         <Produto>
-          <img src="//placehold.it/300x120" alt="Simulador de Locação" />
+          <img src={LogoAnaliseInstantanea} alt="Simulador de Locação" />
         </Produto>
       </Produtos>
     </ProdutosWrapper>

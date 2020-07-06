@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import globals from '../globals'
 
 export const Wrapper = styled.div`
   text-align: center;
@@ -13,8 +14,13 @@ export const Wrapper = styled.div`
     color:#9f9f9f;
   }
 
+  img {
+    margin-bottom: 0;
+  }
+
   h2 {
-    margin:0;
+    margin:0 0 .5em 0;
     padding:0;
+    color: ${globals.colors.darkBlue};
   }
 `
