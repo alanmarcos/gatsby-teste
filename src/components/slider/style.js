@@ -44,19 +44,21 @@ export const SliderWrapper = styled.div`
 
     img {
       @media ${small}{
-        transform: translateX(-3%);
+        transform: translateX(-53%);
         object-fit: contain !important;
         object-position: center bottom !important;
         bottom:0;
-        max-width:610px;
+        left:50% !important;
+        max-width:500px;
         width:100%;
       }
 
       @media ${extraSmall}{
-        transform: translateX(-2%);
+        transform: translateX(-52%);
         object-fit: contain !important;
         object-position: center bottom !important;
         max-width:320px;
+        left:50% !important;
         width:100%;
       }
     }
@@ -82,14 +84,14 @@ export const SliderWrapper = styled.div`
       @media ${small}{
         padding-left:40px;
         padding-right:40px;
-        padding-top:130px;
+        padding-top:115px;
         align-self:flex-start;
       }
 
       @media ${extraSmall}{
         padding-left:20px;
         padding-right:20px;
-        padding-top:135px;
+        padding-top:115px;
         align-self:flex-start;
       }
     }
