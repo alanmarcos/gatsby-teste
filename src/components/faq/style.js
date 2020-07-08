@@ -21,6 +21,11 @@ export const FaqQuestion = styled.dt`
     margin-left:auto;
     margin-right:0;
     align-self: center;
+    transition: all .2s;
+
+    &.is-active {
+      transform: rotate(180deg);
+    }
 
     & > * {
       fill: ${colors.darkBlue};

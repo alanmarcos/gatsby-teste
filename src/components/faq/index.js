@@ -7,7 +7,7 @@ const FaqItem = ({ currentIndex, item, index, onClick }) => {
   let isActive = currentIndex == index
   
   const handleClick = () => {
-    if(onClick && !isActive){
+    if(onClick){
       onClick()
     }    
   }
@@ -18,7 +18,7 @@ const FaqItem = ({ currentIndex, item, index, onClick }) => {
         onClick={handleClick} 
         aria-expanded={isActive.toString()}>
         <h6>{item.question}</h6>
-        <div className="arrow">
+        <div className={`arrow ${isActive ? 'is-active' : ''}`}>
           <Arrow width={16} />
         </div>
       </FaqQuestion>
@@ -33,13 +33,17 @@ const FAQ = ({ data }) => {
 
   const [currentIndex, setIndex] = useState(null)
 
+  const handleClick = (index) => {
+    setIndex( currentIndex == index ? null : index)
+  }
+
   return (
     <div>
       {data.map( (item, index) => 
         <FaqItem 
           index={index} 
           currentIndex={currentIndex} 
-          onClick={() => setIndex(index)}
+          onClick={() => handleClick(index)}
           item={item} />
       )}
     </div>
