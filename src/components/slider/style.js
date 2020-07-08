@@ -18,7 +18,6 @@ export const HomeAwesomeSlider = styled(AwesomeSlider)`
 
 export const SliderWrapper = styled.div`
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.15);
-  margin-bottom:4em;
 
   img {
     margin:0;

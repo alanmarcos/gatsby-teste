@@ -1,9 +1,11 @@
 import styled from 'styled-components'
+import { lighten, darken } from 'polished'
 import globals from '../globals'
 import Mapa from '../../images/map-background.jpg'
 import ParceiroBg from '../../images/parceiro-background.jpg'
 import Lines from '../../images/svg/lines.svg'
-const { mediaqueries, paddingSides, containerMaxWidth } = globals
+const { mediaqueries, paddingSides, containerMaxWidth, lineHeight, colors } = globals
+const { extraSmall, small } = mediaqueries
 
 export const ComoFuncionaWrapper = styled.div`
   display:block;
@@ -11,20 +13,25 @@ export const ComoFuncionaWrapper = styled.div`
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.15);
 `
 
+export const Etapa = styled.div`
+
+`
+
 export const EtapasWrapper = styled.div`
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   grid-gap:30px;
   width:100%;
-  max-width: ${globals.containerMaxWidth};
+  max-width: ${containerMaxWidth};
   margin:0 auto 3em;
+  padding: 0 ${paddingSides};
 
-  @media ${mediaqueries.small}, ${mediaqueries.extraSmall}{
+  @media ${small}, ${extraSmall}{
     grid-template-columns: 1fr;
   }
 
   p {
-    line-height: ${globals.lineHeight};
+    line-height: ${lineHeight};
     max-width:320px;
     margin:0 auto;
     color: ${globals.colors.lightGray};
@@ -38,8 +45,13 @@ export const EtapaHeaderWrapper = styled.div`
   .number-wrapper {
     width:218px;
     position:absolute;
-    left:-35px;
+    left:50%;
+    transform: translateX(-110%);
     bottom:-35px;
+
+    @media ${small}, ${extraSmall}{
+      width:182px;
+    }
     
     img {
       pointer-events:none;
@@ -53,15 +65,25 @@ export const EtapaHeaderWrapper = styled.div`
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate3d(-50%, -50%, 0);
+      transform: translate3d(-50%, -59%, 0);
       text-align:center;
+
+      @media ${small}, ${extraSmall}{
+        font-size:60px;
+        transform: translate3d(-50%, -60%, 0);
+      }
     }
   }
 
   .illustration-wrapper {
-    height:300px;
+    height:250px;
     max-width:300px;
     margin:0 auto;
+
+    @media ${small}, ${extraSmall}{
+      max-width:250px;
+      height:200px;
+    }
 
     img {
       max-width:90%;
@@ -74,6 +96,11 @@ export const MapaWrapper = styled.div`
   height:400px;
   display:flex;
   position:relative;
+  padding:0 ${paddingSides};
+
+  @media ${extraSmall}, ${small}{
+    height:240px;
+  }
 
   &:before {
     content:"";
@@ -101,15 +128,52 @@ export const MapaWrapper = styled.div`
     padding: 1.1em 2em;
     border-radius:6px;
     opacity:0.9;
+    position:relative;
+    overflow: hidden;
+    padding-left:96px;
 
+    &:before {
+      content:"";
+      width:70px;
+      height:100%;
+      background:rgba(0,0,0,0.4);
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:0;
+    }
 
     &:active {
       background:#24b3da;
     }
 
-    & >* {
+    & > * {
       margin:0;
       padding:0;
+      align-self:center;
+    }
+
+    svg {
+      width:19px;
+      height:28px;
+      display:block;
+      position:absolute;
+      left:25px;
+      top:50%;
+      transform: translateY(-50%);
+      z-index:1;
+
+      & > * {
+        fill: ${colors.yellow};
+      }
+    }
+
+    h5 {
+
+      @media ${extraSmall}, ${small}{
+        margin:0 !important;
+        padding:0 !important;
+      }
     }
   }
 
@@ -128,6 +192,14 @@ export const BlocoParceiroWrapper = styled.div`
   background: url(${ParceiroBg}) no-repeat right top #1dc1f1;
   height:210px;
   display:flex;
+
+  @media ${extraSmall}, ${small}{
+    background-position: left top;
+    background-size: auto 100%;
+    height:auto;
+    padding-top:1em;
+    padding-bottom:1em;
+  }
 `
 
 export const BlocoParceiro = styled.div`
@@ -140,7 +212,7 @@ export const BlocoParceiro = styled.div`
   padding-left: ${paddingSides};
   padding-right: ${paddingSides};
 
-  @media ${mediaqueries.extraSmall}, ${mediaqueries.small}{
+  @media ${extraSmall}, ${small}{
     grid-template-columns: 1fr;
     grid-gap:10px;
   }
@@ -161,8 +233,22 @@ export const BlocoParceiro = styled.div`
 
   h4 {
     color:white;
-    margin:0;
-    padding-top:0;
+    margin:0 !important;
+    padding: 0 0 .4em 0 !important;
+  }
+
+  .UIButton {
+    padding-left:5em;
+    padding-right:5em;
+
+    &:hover {
+      opacity:1;
+      background: ${lighten(0.2, colors.lightBlue)};
+    }
+
+    @media ${extraSmall}, ${small}{
+      width:100%;
+    }
   }
 `
 
@@ -209,7 +295,7 @@ export const Produtos = styled.div`
   margin:55px auto;
   grid-gap:30px;
 
-  @media ${globals.mediaqueries.small}, ${globals.mediaqueries.extraSmall} {
+  @media ${globals.small}, ${globals.extraSmall} {
     grid-gap:15px;
     grid-template-columns: repeat(2, minmax(0, 1fr))
   }
@@ -249,7 +335,7 @@ export const DepoimentosWrapper = styled.div`
   padding:0 ${paddingSides};
   max-width: ${containerMaxWidth};
 
-  @media ${mediaqueries.extraSmall}, ${mediaqueries.small}{
+  @media ${extraSmall}, ${small}{
     grid-template-columns: 1fr;
   }
 
@@ -296,7 +382,7 @@ export const DepoimentosWrapper = styled.div`
 
   .content {
 
-    @media ${mediaqueries.small}, ${mediaqueries.extraSmall}{
+    @media ${small}, ${extraSmall}{
       padding-top:20px;
     }
   }
@@ -311,6 +397,10 @@ export const LinesDivisor = styled.div`
 
 export const FAQWrapper = styled.div`
   margin:0 auto;
-  padding:0 ${paddingSides};
+  padding:0 ${paddingSides} 5em;
   max-width: 1030px;
+
+  @media ${small}{
+    padding-bottom:2em;
+  }
 `

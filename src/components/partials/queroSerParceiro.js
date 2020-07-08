@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../button/index'
 import { BlocoParceiroWrapper, BlocoParceiro } from './style'
 
 const QueroSerParceiro = props => {
@@ -13,7 +14,9 @@ const QueroSerParceiro = props => {
           </div>
         </div>
         <div>
-          <a>Cadastrar</a>
+          <Button type="secondary" upperCase={true}>
+            <p>Cadastrar</p>
+          </Button>
         </div>
       </BlocoParceiro>
     </BlocoParceiroWrapper>

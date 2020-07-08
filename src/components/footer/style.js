@@ -18,6 +18,7 @@ export const FooterLine = styled.div`
 
 export const FooterContactsWrapper = styled.div`
   border-top:1px solid #1e4d74;
+  margin-top:60px;
   padding-top:25px;
   padding-bottom:40px;
 
@@ -40,7 +41,7 @@ export const FooterContacts = styled.div`
 
 export const FooterLinksWrapper = styled.div`
   max-width: ${globals.containerMaxWidth};
-  padding:0 ${paddingSides};
+  padding:1em ${paddingSides} 0;
   margin:0 auto;
   display:grid;
   grid-template-columns: 7fr 5fr;

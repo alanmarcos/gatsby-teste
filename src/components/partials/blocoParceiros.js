@@ -2,6 +2,7 @@ import React from 'react'
 import { SectionHeader } from '../sectionHeader/index'
 import PictoParceiros from '../../images/svg/picto-parceiros.svg'
 import { MapaWrapper, ParceirosWrapper } from './style'
+import { ReactComponent as Pin } from '../../images/icons/pin.svg'
 
 const BlocoParceiros = props => {
 
@@ -15,7 +16,10 @@ const BlocoParceiros = props => {
         />
       <MapaWrapper>
         <a href="#">
-          <h6>Encontre a imobiliária mais próxima</h6>
+          <div>
+            <Pin />
+          </div>
+          <h5>Encontre a imobiliária mais próxima</h5>
         </a>
       </MapaWrapper>
     </ParceirosWrapper>
