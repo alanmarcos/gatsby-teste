@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import globals from '../globals'
-export const headerHeight = '116px'
+export const headerHeight = '86px'
+export const headerHeightMobile = '69px'
 const { mediaqueries, colors, paddingSides } = globals
+const { extraSmall, small } = mediaqueries
 
 export const Header = styled.header`
   width:100%;
@@ -15,6 +17,11 @@ export const Header = styled.header`
   transition: all .2s;
   background: ${props => props.bgColor ? props.bgColor : 'none'};
   box-shadow: ${props => props.bgColor ? '0 1px 5px 0 rgba(0,0,0,0.3)' : 'none'};
+
+  @media ${extraSmall}, ${small}{
+    padding: 0 ${paddingSides};
+    height: ${headerHeightMobile};
+  }
 
   *:focus {
     outline-color:#27c3ed;
@@ -30,6 +37,7 @@ export const Menu = styled.nav`
     list-style:none;
     display:flex;
     align-items: center;
+    font-size:1.1em !important;
     
     & > li {
       margin:0;
@@ -38,11 +46,11 @@ export const Menu = styled.nav`
       & + li {
         margin-left:30px;
 
-        @media ${mediaqueries.small}{
+        @media ${small}{
           margin-left:15px;
         }
 
-        @media ${mediaqueries.extraSmall}{
+        @media ${extraSmall}{
           margin-left:10px;
         }
       }
@@ -62,11 +70,11 @@ export const Menu = styled.nav`
       }
     }
 
-    @media ${mediaqueries.small}{
+    @media ${small}{
       display: none;
     }
 
-    @media ${mediaqueries.extraSmall}{
+    @media ${extraSmall}{
       display: none;
     }
   }
@@ -74,7 +82,7 @@ export const Menu = styled.nav`
   .mobile-menu-link {
     display:none;
 
-    @media ${mediaqueries.small}, ${mediaqueries.extraSmall}{
+    @media ${small}, ${extraSmall}{
       display: list-item;
     }
 
@@ -97,7 +105,7 @@ export const Menu = styled.nav`
 
   svg {
     width:auto;
-    height:40px;
+    height:30px;
 
     & > * { 
       fill: url(#gradientIcons);
@@ -108,10 +116,20 @@ export const Menu = styled.nav`
 export const LogoWrapper = styled.h1`
   margin:0 !important;
   padding:0 !important;
+  font-size: 0 !important;
 
-  img {
-    margin:0;
-    border:0;
-    padding:0;
+  a {
+    display:inline-flex;
+
+    img {
+      margin:0;
+      border:0;
+      padding:0;
+      max-width:142px;
+
+      @media ${extraSmall}, ${small}{
+        max-width:102px;
+      }
+    }
   }
 `

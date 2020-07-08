@@ -172,7 +172,8 @@ body blockquote {
   font-size: 1.3rem;
   margin-left: 1.4em;
   line-height: 1.6;
-  font-family: Georgia, sans-serif;
+  font-family: Roboto;
+  font-weight:300;
   font-style: italic;
 }
 

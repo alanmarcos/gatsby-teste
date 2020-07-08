@@ -35,6 +35,7 @@ export const EtapasWrapper = styled.div`
     max-width:320px;
     margin:0 auto;
     color: ${globals.colors.lightGray};
+    font-weight: 300;
   }
 `
 
@@ -328,9 +329,40 @@ export const DepoimentosContainer = styled.div`
   overflow:hidden;
 `
 
+export const Depoimento = styled.div`
+
+  blockquote {
+    margin-top:1.5em;
+    color: #666;
+    text-align: center;
+    position: relative;
+
+    &:before, &:after {
+      position:absolute;
+      display:block;
+      font-family: Georgia, serif;
+      font-size:3em;
+      opacity:0.3;
+    }
+
+    &:before {
+      content:"“";
+      left:-15px;
+      top:-25px;
+    }
+
+    &:after {
+      content:"”";
+      
+      right:-5px;
+      bottom:-40px;
+    }
+  }
+`
+
 export const DepoimentosWrapper = styled.div`
   display:grid;
-  grid-template-columns: 4fr 8fr;
+  grid-template-columns: repeat(3, 1fr);
   margin:0 auto;
   padding:0 ${paddingSides};
   max-width: ${containerMaxWidth};
